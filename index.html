@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark-theme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firas Belarbi - Portfolio Full-Stack Web Developer & UX Architect.">
+    <meta name="author" content="Firas Belarbi">
+
+    <title>Firas Belarbi | Full-Stack Web Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS SDK (Clé publique configurée) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "omT37jyUz_AvwN3_j",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- FULLSCREEN INTRO ANIMATION -->
+    <div id="intro-screen">
+        <div class="intro-background">
+            <div class="intro-glow"></div>
+            <canvas id="intro-canvas"></canvas>
+        </div>
+
+        <div class="intro-content">
+            <div id="intro-text" class="intro-text-container"></div>
+            <div class="intro-progress-line">
+                <div class="intro-progress-fill" id="intro-line-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barre de progression de défilement -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <!-- Fond interactif Canvas de particules -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Lumières ambiantes d'arrière-plan -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Curseur personnalisé néon & interactif -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Notification Toast -->
+    <div class="toast-notification" id="toast">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-message">Copié dans le presse-papier !</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar-header" id="header">
+        <div class="container navbar-container">
+            <a href="#home" class="logo magnetic-target">FB<span class="dot">.</span></a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Accueil</a></li>
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#experience" class="nav-link">Parcours</a></li>
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-sm btn-outline magnetic-target">Me Contacter</a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Menu Mobile">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <div class="badge-pill glowing-border">
+                        <span class="status-dot"></span> Disponible pour projets web & opportunités
+                    </div>
+                    <span class="greeting">Hello, I'm</span>
+                    <h1 class="hero-title">Firas Belarbi</h1>
+                    <h2 class="hero-subtitle">Web Developer & <span class="gradient-text type-writer"
+                            id="typewriter"></span></h2>
+                    <p class="hero-description">
+                        Passionate Web Developer who builds modern, responsive and user-friendly web applications. I
+                        create efficient solutions with clean code and intuitive user experiences.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary magnetic-target"><i class="fa-solid fa-rocket"></i>
+                            View My Projects</a>
+                        <a href="#contact" class="btn btn-secondary magnetic-target"><i
+                                class="fa-solid fa-paper-plane"></i> Contact Me</a>
+                    </div>
+                    <div class="hero-location">
+                        <i class="fa-solid fa-location-dot"></i> Based in Bizerte, Tunisia
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="code-card tilt-card spotlight-card">
+                        <div class="code-header">
+                            <div class="window-buttons">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">firas_developer.js</span>
+                        </div>
+                        <pre class="code-body"><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">'Firas Belarbi'</span>,
+  <span class="property">role</span>: <span class="string">'Full-Stack Web Developer'</span>,
+  <span class="property">location</span>: <span class="string">'Bizerte, Tunisia'</span>,
+  <span class="property">specialization</span>: <span class="string">'Web Architect & AI Workflows'</span>,
+  <span class="property">passions</span>: [<span class="string">'Clean Code'</span>, <span class="string">'Modern UX'</span>, <span class="string">'Problem Solving'</span>],
+  <span class="function">buildApp</span>: <span class="keyword">function</span>() {
+    <span class="keyword">return</span> <span class="string">'Turning ideas into practical digital reality'</span>;
+  }
+};</code></pre>
+                        <div class="floating-tech tech-1"><i class="fa-brands fa-react"></i> React</div>
+                        <div class="floating-tech tech-2"><i class="fa-brands fa-python"></i> FastAPI</div>
+                        <div class="floating-tech tech-3"><i class="fa-solid fa-database"></i> SQL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section section" id="about">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Get to know me</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-main-text card-box spotlight-card reveal">
+                        <h3 class="about-tagline">Passionate about building digital experiences</h3>
+                        <p>
+                            I'm a web developer passionate about creating modern web applications and solving real-world
+                            problems through technology. I enjoy working on both frontend and backend development and
+                            continuously improving my technical skills.
+                        </p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-text">100%</span>
+                                <span class="stat-label">Continuous Learning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-pillars reveal">
+                        <div class="pillar-card spotlight-card tilt-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <div class="pillar-info">
+                                <h4>Web Development</h4>
+                                <p>Modern and responsive websites and web applications built with clean architecture.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card spotlight-card tilt-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-server"></i></div>
+                            <div class="pillar-info">
+                                <h4>Backend Development</h4>
+                                <p>Robust APIs, databases and server-side applications for business logic.</p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card spotlight-card tilt-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div class="pillar-info">
+                                <h4>Problem Solving</h4>
+                                <p>Turning ideas and real-world problems into practical digital solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills-section section" id="skills">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Technical Stack</span>
+                    <h2 class="section-title">Mes Compétences</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-categories-grid">
+                    <!-- 1. Frontend Development -->
+                    <div class="skill-category-card card-box spotlight-card reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-desktop category-icon"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>HTML5 / CSS3 / JavaScript</span><span>95%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>React 19 / React.js (Vite)</span><span>90%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>TypeScript & Tailwind CSS</span><span>88%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Vue.js</span><span>70%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Angular</span><span>70%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Backend Development & Security -->
+                    <div class="skill-category-card card-box spotlight-card reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-server category-icon"></i>
+                            <h3>Backend & Security</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Python 3.12 / FastAPI</span><span>90%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Spring Boot</span><span>70%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Laravel (PHP)</span><span>70%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Sécurité (JWT, Bcrypt, 2FA/OTP,
+                                        RBAC)</span><span>85%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>REST APIs & WebSockets</span><span>88%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Database & DevSecOps -->
+                    <div class="skill-category-card card-box spotlight-card reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-cloud-arrow-up category-icon"></i>
+                            <h3>Database & DevSecOps</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>PostgreSQL / MySQL / SQLite</span><span>88%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Docker & Docker Compose</span><span>85%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>CI/CD (GitHub Actions, Trivy,
+                                        Gitleaks)</span><span>82%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="82%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Nginx / Git & GitHub</span><span>85%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Artificial Intelligence & Local LLMs -->
+                    <div class="skill-category-card card-box spotlight-card reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-brain category-icon"></i>
+                            <h3>Artificial Intelligence</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>RAG (Retrieval-Augmented
+                                        Generation)</span><span>82%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="82%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Ollama (Local LLMs)</span><span>85%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>OpenAI API & Prompting</span><span>82%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="82%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Embeddings & Vector Databases</span><span>78%</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience-section section" id="experience">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Career Path</span>
+                    <h2 class="section-title">My Journey</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Stage CSI Corporation -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
+                        <div class="timeline-content card-box spotlight-card tilt-card">
+                            <span class="timeline-date">Stage</span>
+                            <h3 class="timeline-title">CSI Corporation — Stage Développeur Full-Stack & IA</h3>
+                            <p class="timeline-subtitle">Création de la plateforme HelpDesk IA</p>
+                            <ul class="timeline-list">
+                                <li><i class="fa-solid fa-check"></i> Conception et développement d'une application web
+                                    de gestion de tickets informatiques assistée par IA (Ollama).</li>
+                                <li><i class="fa-solid fa-check"></i> Architecture moderne avec React 19, TypeScript,
+                                    FastAPI (Python 3.12) et PostgreSQL.</li>
+                                <li><i class="fa-solid fa-check"></i> Implémentation du suivi en temps réel via
+                                    WebSockets et conteneurisation Docker Compose.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Stage SEPCM -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="timeline-content card-box spotlight-card tilt-card">
+                            <span class="timeline-date">Stage</span>
+                            <h3 class="timeline-title">SEPCM Group — Département IT</h3>
+                            <p class="timeline-subtitle">Gestion de données & Application d'Immobilisations</p>
+                            <ul class="timeline-list">
+                                <li><i class="fa-solid fa-check"></i> Gestion de données et intégration OData avec
+                                    Microsoft Dynamics NAV 2015.</li>
+                                <li><i class="fa-solid fa-check"></i> Développement d'une application mobile de contrôle
+                                    des immobilisations (React Native, Express.js, SQLite).</li>
+                                <li><i class="fa-solid fa-check"></i> Système de numérisation de codes-barres et QR
+                                    codes pour l'inventaire des actifs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ISET Bizerte -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="timeline-content card-box spotlight-card tilt-card">
+                            <span class="timeline-date">2024 - Présent</span>
+                            <h3 class="timeline-title">Étudiant en DSI (Développement des Systèmes d'Information)</h3>
+                            <p class="timeline-subtitle">ISET Bizerte, Tunisie</p>
+                            <p class="timeline-text">Spécialisation en Développement des Systèmes d'Information.
+                                Formation axée sur le génie logiciel, le développement web & mobile, et l'architecture
+                                des bases de données.</p>
+                        </div>
+                    </div>
+
+                    <!-- Baccalauréat 2024 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"><i class="fa-solid fa-award"></i></div>
+                        <div class="timeline-content card-box spotlight-card tilt-card">
+                            <span class="timeline-date">2024</span>
+                            <h3 class="timeline-title">Baccalauréat en Sciences de l'Informatique</h3>
+                            <p class="timeline-subtitle">Mention Assez Bien</p>
+                            <p class="timeline-text">Obtention du diplôme de Baccalauréat spécialité Informatique avec
+                                Mention Assez Bien.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="projects-section section" id="projects">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="project-filters reveal">
+                    <button class="filter-btn active magnetic-target" data-filter="all">All</button>
+                    <button class="filter-btn magnetic-target" data-filter="web">Web</button>
+                    <button class="filter-btn magnetic-target" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn magnetic-target" data-filter="backend">Backend</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- 1. Trimax -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="web backend">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-trophy project-icon"></i>
+                            <span class="category-tag">SaaS & Club Management</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Trimax Club</h3>
+                            <p class="project-description">Plateforme SaaS complète de gestion de club omnisports
+                                (Triathlon, Athlétisme, Natation, Cycling).</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">DevSecOps</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://trimaxbizerte.com" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary magnetic-target"><i class="fa-solid fa-globe"></i>
+                                    trimaxbizerte.com</a>
+                                <a href="https://github.com/firasbelarbicontact-wq/trimax-club" target="_blank"
+                                    rel="noopener" class="btn btn-sm btn-outline magnetic-target"><i
+                                        class="fa-brands fa-github"></i> GitHub</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-trimax"><i class="fa-solid fa-circle-info"></i> Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. HelpDesk IA -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="web backend">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-headset project-icon"></i>
+                            <span class="category-tag">Open Source & IA</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">HelpDesk IA</h3>
+                            <p class="project-description">Application web Open Source de gestion de tickets
+                                informatiques assistée par Intelligence Artificielle locale (Ollama).</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React 19</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Ollama IA</span>
+                                <span class="tech-tag">WebSockets</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/firasbelarbicontact-wq/helpdesk-ia" target="_blank"
+                                    rel="noopener" class="btn btn-sm btn-primary magnetic-target"><i
+                                        class="fa-brands fa-github"></i> GitHub Open Source</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-helpdesk"><i class="fa-solid fa-circle-info"></i> Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Immobilisation Control -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="mobile backend">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-qrcode project-icon"></i>
+                            <span class="category-tag">Mobile & Enterprise</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Immobilisation Control App</h3>
+                            <p class="project-description">Application mobile de contrôle des actifs d'entreprise
+                                interconnectée avec Microsoft Dynamics NAV 2015.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">Dynamics NAV</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary magnetic-target"><i class="fa-brands fa-github"></i>
+                                    GitHub</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-immobilisation"><i class="fa-solid fa-circle-info"></i>
+                                    Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Défis Cerveau -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="web">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-gamepad project-icon"></i>
+                            <span class="category-tag">Web Gaming</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Défis Cerveau</h3>
+                            <p class="project-description">Plateforme web interactive de mini-jeux stimulant la mémoire,
+                                les réflexes, les mathématiques et la culture générale.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary magnetic-target"><i class="fa-brands fa-github"></i>
+                                    GitHub</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-defis-cerveau"><i class="fa-solid fa-circle-info"></i>
+                                    Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Car Cost Comparison -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="web backend">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-car-side project-icon"></i>
+                            <span class="category-tag">Full-Stack Web</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Car Cost Comparison</h3>
+                            <p class="project-description">Plateforme d'analyse comparative permettant d'évaluer le coût
+                                réel des véhicules (carburant et maintenance).</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary magnetic-target"><i class="fa-brands fa-github"></i>
+                                    GitHub</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-car-cost"><i class="fa-solid fa-circle-info"></i> Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Sana3ty -->
+                    <div class="project-card card-box spotlight-card tilt-card reveal" data-category="web backend">
+                        <div class="project-preview-box">
+                            <i class="fa-solid fa-handshake project-icon"></i>
+                            <span class="category-tag">Service Platform</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Sana3ty</h3>
+                            <p class="project-description">Plateforme de mise en relation entre clients et artisans
+                                qualifiés tunisiens (plomberie, électricité, climatisation).</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://sana3ty.tn" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary magnetic-target"><i class="fa-solid fa-globe"></i>
+                                    sana3ty.tn</a>
+                                <button class="btn btn-sm btn-outline open-modal-btn magnetic-target"
+                                    data-modal="modal-sana3ty"><i class="fa-solid fa-circle-info"></i> Détails</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT I CAN BUILD SECTION -->
+        <section class="services-section section" id="what-i-do">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Services & Solutions</span>
+                    <h2 class="section-title">What I Can Build</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card card-box spotlight-card tilt-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3>Web Development</h3>
+                        <p>Modern responsive websites and web applications.</p>
+                    </div>
+
+                    <div class="service-card card-box spotlight-card tilt-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Frontend Development</h3>
+                        <p>Interactive interfaces with clean and responsive designs.</p>
+                    </div>
+
+                    <div class="service-card card-box spotlight-card tilt-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Backend Development</h3>
+                        <p>REST APIs, authentication, business logic and database integration.</p>
+                    </div>
+
+                    <div class="service-card card-box spotlight-card tilt-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <h3>Mobile Development</h3>
+                        <p>Cross-platform mobile applications.</p>
+                    </div>
+
+                    <div class="service-card card-box spotlight-card tilt-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>AI Applications</h3>
+                        <p>Applications integrating APIs, LLMs, embeddings and AI features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKFLOW SECTION -->
+        <section class="workflow-section section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Workflow</span>
+                    <h2 class="section-title">How I Work</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="workflow-steps">
+                    <div class="workflow-step spotlight-card reveal">
+                        <div class="step-num">01</div>
+                        <h4>Understand</h4>
+                        <p>Analyze the problem and requirements.</p>
+                    </div>
+
+                    <div class="workflow-step spotlight-card reveal">
+                        <div class="step-num">02</div>
+                        <h4>Design</h4>
+                        <p>Plan the interface and application architecture.</p>
+                    </div>
+
+                    <div class="workflow-step spotlight-card reveal">
+                        <div class="step-num">03</div>
+                        <h4>Develop</h4>
+                        <p>Build the frontend, backend and database.</p>
+                    </div>
+
+                    <div class="workflow-step spotlight-card reveal">
+                        <div class="step-num">04</div>
+                        <h4>Test</h4>
+                        <p>Test functionality, responsiveness and performance.</p>
+                    </div>
+
+                    <div class="workflow-step spotlight-card reveal">
+                        <div class="step-num">05</div>
+                        <h4>Deploy</h4>
+                        <p>Prepare the application for production.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-lead">Have a project idea or want to discuss a web development opportunity? Feel
+                        free to contact me.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card card-box spotlight-card reveal">
+                        <h3>Contact Information</h3>
+                        <p>Available for web development opportunities and technical discussions.</p>
+
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="info-label">Email (Click to copy)</span>
+                                    <span class="info-val copy-trigger"
+                                        data-copy="firasbelarbi.contact@gmail.com">firasbelarbi.contact@gmail.com</span>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div>
+                                    <span class="info-label">LinkedIn</span>
+                                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"
+                                        class="info-val">linkedin.com/in/yourusername</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+                                <div>
+                                    <span class="info-label">GitHub</span>
+                                    <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                                        class="info-val">github.com/firasbelarbicontact-wq</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <span class="info-label">Location</span>
+                                    <span class="info-val">Bizerte, Tunisia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card card-box spotlight-card reveal">
+                        <form id="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="user_name" required placeholder="Your Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="user_email" required
+                                    placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Project Subject">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Your Message..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block magnetic-target">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POP-UPS / MODALES DE DÉTAILS DE PROJETS -->
+        <div class="project-modal-overlay" id="modal-overlay">
+
+            <!-- Modal Trimax -->
+            <div class="project-modal-card" id="modal-trimax">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-trophy modal-icon"></i>
+                    <div>
+                        <h3>Trimax — Club Sportif SaaS</h3>
+                        <span class="modal-subtitle">Projet SaaS Omnisports</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Trimax est une application web SaaS conçue pour digitaliser et centraliser l'organisation d'un
+                        club omnisports (Triathlon, Athlétisme, Natation, Cycling).</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Espace Admin :</strong> Suivi comptable, réductions, historique figé, exports
+                            PDF/Excel, alertes e-mail.</li>
+                        <li><strong>Espace Coach :</strong> Planning automatique, pointage des présences, statistiques
+                            et suivi de performances.</li>
+                        <li><strong>Espace Athlète / Parent :</strong> Suivi des cotisations, calendrier des
+                            entraînements et badges.</li>
+                        <li><strong>DevSecOps :</strong> Authentification 2FA/OTP par e-mail, tokens JWT,
+                            conteneurisation Docker & CI/CD sécurisé.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://trimaxbizerte.com" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i
+                            class="fa-solid fa-globe"></i> Accéder au Site</a>
+                    <a href="https://github.com/firasbelarbicontact-wq/trimax-club" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Dépôt GitHub</a>
+                </div>
+            </div>
+
+            <!-- Modal HelpDesk IA -->
+            <div class="project-modal-card" id="modal-helpdesk">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-headset modal-icon"></i>
+                    <div>
+                        <h3>HelpDesk IA</h3>
+                        <span class="modal-subtitle">Open Source & IA Locale</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Application web Open Source de gestion de tickets d'assistance informatique intégrant de
+                        l'Intelligence Artificielle générative locale via Ollama.</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Analyse IA & RAG :</strong> Classification et recommandation automatique de
+                            techniciens selon l'urgence.</li>
+                        <li><strong>Temps Réel :</strong> Notifications instantanées et tableau de bord dynamique via
+                            WebSockets.</li>
+                        <li><strong>Architecture Moderne :</strong> Frontend React 19 / Vite + Backend FastAPI (Python
+                            3.12) & PostgreSQL.</li>
+                        <li><strong>Dockerized :</strong> Déploiement complet en une commande avec Docker Compose.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/firasbelarbicontact-wq/helpdesk-ia" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-primary"><i class="fa-brands fa-github"></i> Code Source GitHub</a>
+                </div>
+            </div>
+
+            <!-- Modal Immobilisation -->
+            <div class="project-modal-card" id="modal-immobilisation">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-qrcode modal-icon"></i>
+                    <div>
+                        <h3>Immobilisation Control App</h3>
+                        <span class="modal-subtitle">Solution Mobile d'Entreprise</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Application mobile d'inventaire et de gestion du matériel de l'entreprise SEPCM Group, connectée
+                        au Progiciel ERP Microsoft Dynamics NAV 2015.</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Scanner QR/Code-Barres :</strong> Numérisation et vérification physique rapide des
+                            équipements sur le terrain.</li>
+                        <li><strong>Intégration NAV :</strong> Flux de données synchronisés via les services web OData.
+                        </li>
+                        <li><strong>Technologies :</strong> React Native, Express.js et base de données locale SQLite
+                            pour le mode hors-ligne.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-primary"><i class="fa-brands fa-github"></i> Dépôt GitHub</a>
+                </div>
+            </div>
+
+            <!-- Modal Défis Cerveau -->
+            <div class="project-modal-card" id="modal-defis-cerveau">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-gamepad modal-icon"></i>
+                    <div>
+                        <h3>Défis Cerveau</h3>
+                        <span class="modal-subtitle">Plateforme Interactive de Jeux</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Plateforme web ludique conçue pour l'entraînement cérébral avec une variété de mini-jeux
+                        dynamiques.</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Modes de Jeu :</strong> Tests de mémoire de travail, calculs rapides, vitesse de
+                            réaction et quiz de culture générale.</li>
+                        <li><strong>Interface Fluide :</strong> Développé sous Vue.js avec système de score et suivi des
+                            progressions.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-primary"><i class="fa-brands fa-github"></i> Dépôt GitHub</a>
+                </div>
+            </div>
+
+            <!-- Modal Car Cost Comparison -->
+            <div class="project-modal-card" id="modal-car-cost">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-car-side modal-icon"></i>
+                    <div>
+                        <h3>Car Cost Comparison</h3>
+                        <span class="modal-subtitle">Calculateur de Coût Automobile</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Outil d'aide à la décision permettant de calculer et comparer l'empreinte financière globale de
+                        véhicules.</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Calculs Avancés :</strong> Comparatif sur la consommation en carburant,
+                            l'amortissement et les frais d'entretien réguliers.</li>
+                        <li><strong>Technologies :</strong> Frontend React.js et backend robuste Spring Boot (Java) avec
+                            stockage SQL.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                        class="btn btn-sm btn-primary"><i class="fa-brands fa-github"></i> Dépôt GitHub</a>
+                </div>
+            </div>
+
+            <!-- Modal Sana3ty -->
+            <div class="project-modal-card" id="modal-sana3ty">
+                <button class="modal-close-btn">&times;</button>
+                <div class="modal-header">
+                    <i class="fa-solid fa-handshake modal-icon"></i>
+                    <div>
+                        <h3>Sana3ty</h3>
+                        <span class="modal-subtitle">Services Artisans Tunisie</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Plateforme nationale facilitant la recherche et le contact direct avec des artisans qualifiés en
+                        Tunisie.</p>
+                    <h4>Points Forts & Fonctionnalités :</h4>
+                    <ul>
+                        <li><strong>Mise en Relation :</strong> Annuaire interactif de plombiers, électriciens,
+                            dépanneurs et techniciens.</li>
+                        <li><strong>Évaluations & Demandes :</strong> Prise de rendez-vous en ligne, système de notation
+                            et géolocalisation.</li>
+                        <li><strong>Technologies :</strong> Architecture Full-Stack PHP & Angular avec gestion MySQL.
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://sana3ty.tn" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i
+                            class="fa-solid fa-globe"></i> Visiter sana3ty.tn</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">FB<span class="dot">.</span></a>
+                <p class="footer-tagline">Web Developer & Full-Stack Developer</p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/firasbelarbicontact-wq" target="_blank" rel="noopener"
+                    aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:firasbelarbi.contact@gmail.com" aria-label="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-copy">
+                &copy; 2026 Firas Belarbi. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton Retour en Haut -->
+    <button id="back-to-top" class="back-to-top magnetic-target" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
